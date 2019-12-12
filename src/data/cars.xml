@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<cars>
+ <vehicle>
+  <make>Mercedes Benz</make>
+  <model>c63 amg</model>
+  <price>30000.0</price>
+  <fuelConsumption>5.0</fuelConsumption>
+  <power>150</power>
+  <year>2013</year>
+  <fuelType>DIESEL</fuelType>
+ </vehicle>
+ <vehicle>
+  <make>BMW</make>
+  <model>c63 amg</model>
+  <price>30000.0</price>
+  <fuelConsumption>5.0</fuelConsumption>
+  <power>150</power>
+  <year>2013</year>
+  <fuelType>DIESEL</fuelType>
+ </vehicle>
+ <vehicle>
+  <make>Scania</make>
+  <model>r420</model>
+  <price>70000.0</price>
+  <fuelConsumption>11.7</fuelConsumption>
+  <power>580</power>
+  <year>2013</year>
+  <fuelType>DIESEL</fuelType>
+ </vehicle>
+</cars>
