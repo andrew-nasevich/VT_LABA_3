@@ -9,22 +9,21 @@ import org.xml.sax.SAXException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.XMLConstants;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.transform.stream.StreamSource;
-import javax.xml.validation.SchemaFactory;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+@WebServlet("/controller")
 public class ListServlet extends HttpServlet {
 
     private static final int PAGE_SIZE = 2;
@@ -32,8 +31,11 @@ public class ListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, IOException {
 
-        String carsXSD =  "C:\\5сем\\java\\src\\data\\cars.xsd";
-        String carsXML =  "C:\\5сем\\java\\src\\data\\cars.xml";
+       // String carsXSD =  "C:\\5сем\\java\\src\\data\\cars.xsd";
+       // String carsXML =  "C:\\5сем\\java\\src\\data\\cars.xml";
+        String carsXSD =  "C:\\JavaProjects\\java\\src\\data\\cars.xsd";
+        String carsXML =  "C:\\JavaProjects\\java\\src\\data\\cars.xml";
+
         XMLVerifier xmlVerifier = new XMLVerifier();
         if (!xmlVerifier.validate(new File(carsXML), new File(carsXSD))){
             System.out.println("Invalid format cars.xml");
@@ -57,13 +59,13 @@ public class ListServlet extends HttpServlet {
         } catch (SAXException e) {
             e.printStackTrace();
         }
-
-
         ArrayList<Vehicle> vehicles = saxp.getResult();*/
         /********************************************************/
 
+
+
         /************************  DOM parser   *****************/
-        /*DOM dom = new DOM();
+       /* DOM dom = new DOM();
         ArrayList<Vehicle> vehicles = null;
         try {
             vehicles = dom.getResult(carsXML);
@@ -75,6 +77,7 @@ public class ListServlet extends HttpServlet {
         /********************************************************/
 
 
+
         /************************  StAX parser   *****************/
         ArrayList<Vehicle> vehicles = null;
         try {
@@ -83,7 +86,6 @@ public class ListServlet extends HttpServlet {
         } catch (XMLStreamException e) {
             e.printStackTrace();
         }
-
         /********************************************************/
 
 

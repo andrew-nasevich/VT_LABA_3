@@ -1,17 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="app.AutoBase.Vehicle" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-    <title>Car list</title>
+    <title>Hotel list</title>
 </head>
 <body>
-    Hi, everybody
+    Добро пожаловать)
 
     <c:if test="${vehicles != null && !vehicles.isEmpty()}">
         <table border="1">
-            <caption> Vehicle table </caption>
+
+            <caption> Таблица </caption>
             <tr>
                 <th>Make</th>
                 <th>Model</th>

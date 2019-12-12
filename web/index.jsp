@@ -4,6 +4,12 @@
     <title>Title</title>
   </head>
   <body>
-    <button onclick="location.href='/list'">List cars</button>
+  <form action="controller">
+
+    Здравствуйте
+    </br></br>
+    <input type="submit" value="Нажмите">
+
+  </form>
   </body>
 </html>

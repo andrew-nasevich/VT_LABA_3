@@ -6,8 +6,10 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="parse" />
+          <element id="module-output" name="2" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="2/web/Web" />
     </root>
   </artifact>
 </component>

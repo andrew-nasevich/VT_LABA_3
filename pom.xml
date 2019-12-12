@@ -39,13 +39,12 @@
             <scope>provided</scope>
         </dependency>
 
-<!--        For taglib-->
+        <!--For taglib c-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-
     </dependencies>
 
 </project>
