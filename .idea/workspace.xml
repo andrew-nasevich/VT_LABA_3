@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f97a850c-f7e6-4176-b892-24037bb2c0f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/servlets/ListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/servlets/ListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/views/list.jsp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -217,7 +218,7 @@
       <workItem from="1576176410705" duration="122000" />
       <workItem from="1576176557310" duration="29000" />
       <workItem from="1576176662991" duration="7144000" />
-      <workItem from="1576237555932" duration="4064000" />
+      <workItem from="1576237555932" duration="4482000" />
     </task>
     <servers />
   </component>

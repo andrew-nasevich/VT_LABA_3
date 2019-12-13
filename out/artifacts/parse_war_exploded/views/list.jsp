@@ -2,15 +2,15 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
-    <title>Hotel list</title>
+    <title>Отель</title>
 </head>
 <body>
-    Добро пожаловать)
+    Добро пожаловать!
 
     <c:if test="${rooms != null && !rooms.isEmpty()}">
         <table border="1">
 
-            <caption> Таблица </caption>
+            <caption> Клиенты </caption>
             <tr>
                 <th>Name</th>
                 <th>Surname</th>
