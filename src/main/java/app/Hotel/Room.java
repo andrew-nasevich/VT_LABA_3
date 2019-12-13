@@ -15,20 +15,11 @@ public class Room implements java.io.Serializable{
     private ViewType viewType;
     private User manager;
 
-    /**
-     * Gets manager.
-     *
-     * @return the manager
-     */
+
     public User getManager() {
         return manager;
     }
 
-    /**
-     * Sets manager.
-     *
-     * @param manager the manager
-     */
     public void setManager(User manager) {
         this.manager = manager;
     }
@@ -39,7 +30,7 @@ public class Room implements java.io.Serializable{
      * @param _name            the name
      * @param _surname           the surname
      * @param _price           the price
-     * @param _sale the fuel consumption
+     * @param _sale             the sale
      * @param _number           the number
      * @param _countOfRoom            the countOfRoom
      * @param _viewType        the fuel type
@@ -55,26 +46,14 @@ public class Room implements java.io.Serializable{
         viewType = _viewType;
     }
 
-    /**
-     * Instantiates a new Room.
-     */
     public Room() {
     }
 
-    /**
-     * Gets name.
-     *
-     * @return the name
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Sets name.
-     *
-     * @param name the name
-     */
+
     public void setName(String name) {
         this.name = name;
     }
@@ -97,92 +76,50 @@ public class Room implements java.io.Serializable{
         this.surname = surname;
     }
 
-    /**
-     * Gets price.
-     *
-     * @return the price
-     */
+
     public double getPrice() {
         return price;
     }
 
-    /**
-     * Sets price.
-     *
-     * @param price the price
-     */
+
     public void setPrice(double price) {
         this.price = price;
     }
 
-    /**
-     * Gets fuel consumption.
-     *
-     * @return the fuel consumption
-     */
+
     public double getSale() {
         return sale;
     }
 
-    /**
-     * Sets fuel consumption.
-     *
-     * @param sale the fuel consumption
-     */
+
     public void setSale(double sale) {
         this.sale = sale;
     }
 
-    /**
-     * Gets number.
-     *
-     * @return the number
-     */
+
     public int getNumber() {
         return number;
     }
 
-    /**
-     * Sets number.
-     *
-     * @param number the number
-     */
+
     public void setNumber(int number) {
         this.number = number;
     }
 
-    /**
-     * Gets countOfRoom.
-     *
-     * @return the countOfRoom
-     */
+
     public int getCountOfRoom() {
         return countOfRoom;
     }
 
-    /**
-     * Sets countOfRoom.
-     *
-     * @param countOfRoom the countOfRoom
-     */
     public void setCountOfRoom(int countOfRoom) {
         this.countOfRoom = countOfRoom;
     }
 
-    /**
-     * Gets fuel type.
-     *
-     * @return the fuel type
-     */
+
     public ViewType getViewType() {
         return viewType;
     }
 
-    /**
-     * Sets fuel type.
-     *
-     * @param viewType the fuel type
-     */
     public void setViewType(ViewType viewType) {
         this.viewType = viewType;
     }

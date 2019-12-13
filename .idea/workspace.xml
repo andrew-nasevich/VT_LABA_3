@@ -8,7 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f97a850c-f7e6-4176-b892-24037bb2c0f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Hotel/BodyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Hotel/BodyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Hotel/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Hotel/Hotel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Hotel/HouseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Hotel/HouseCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Hotel/PayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Hotel/PayType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Hotel/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Hotel/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Hotel/ViewType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Hotel/ViewType.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +223,7 @@
       <workItem from="1576176410705" duration="122000" />
       <workItem from="1576176557310" duration="29000" />
       <workItem from="1576176662991" duration="7144000" />
-      <workItem from="1576237555932" duration="5405000" />
+      <workItem from="1576237555932" duration="5711000" />
     </task>
     <servers />
   </component>
