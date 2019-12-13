@@ -1,4 +1,4 @@
-import app.AutoBase.Vehicle;
+import app.Hotel.Room;
 import app.Parsers.SAX;
 import org.xml.sax.SAXException;
 
@@ -41,10 +41,10 @@ public class Main {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
 
-        String carsXSD =  new File("").getAbsolutePath()+"\\src\\data\\cars.xsd";
-        String carsXML =  new File("").getAbsolutePath()+"\\src\\data\\cars.xml";
+        String carsXSD =  new File("").getAbsolutePath()+"\\src\\data\\rooms.xsd";
+        String carsXML =  new File("").getAbsolutePath()+"\\src\\data\\rooms.xml";
         if (!validateXMLByXSD(new File(carsXML), new File(carsXSD))){
-            System.out.println("Invalid format cars.xml");
+            System.out.println("Invalid format rooms.xml");
             System.exit(0);
         }
 
@@ -54,10 +54,10 @@ public class Main {
 
         parser.parse(new File(carsXML), saxp);
 
-        ArrayList<Vehicle> vehicles = saxp.getResult();
+        ArrayList<Room> rooms = saxp.getResult();
 
-        for (Vehicle v :
-             vehicles) {
+        for (Room v :
+                rooms) {
             System.out.println(v);
         }
     }

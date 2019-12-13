@@ -1,7 +1,7 @@
 package app.Parsers;
 
-import app.AutoBase.FuelType;
-import app.AutoBase.Vehicle;
+import app.Hotel.Room;
+import app.Hotel.ViewType;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
@@ -15,42 +15,40 @@ public class StAX implements AutoCloseable {
 
     private final XMLStreamReader reader;
 
-    private ArrayList<Vehicle> vehicles = new ArrayList<>();
+    private ArrayList<Room> rooms = new ArrayList<>();
 
-    public ArrayList<Vehicle> getResult() throws XMLStreamException {
+    public ArrayList<Room> getResult() throws XMLStreamException {
 
         while (reader.hasNext()) {       // while not end of XML
             int event = reader.next();   // read next event
             if (event == XMLEvent.START_ELEMENT &&
-                    "vehicle".equals(reader.getLocalName())) {
-                Vehicle vehicle = new Vehicle();
+                    "room".equals(reader.getLocalName())) {
+                Room room = new Room();
 
-                doUntil(XMLEvent.START_ELEMENT, "make");
-                vehicle.setMake(reader.getElementText());
+                doUntil(XMLEvent.START_ELEMENT, "name");
+                room.setName(reader.getElementText());
 
-                doUntil(XMLEvent.START_ELEMENT, "model");
-                vehicle.setModel(reader.getElementText());
+                doUntil(XMLEvent.START_ELEMENT, "surname");
+                room.setSurname(reader.getElementText());
 
                 doUntil(XMLEvent.START_ELEMENT, "price");
-                vehicle.setPrice(Double.parseDouble(reader.getElementText()));
+                room.setPrice(Double.parseDouble(reader.getElementText()));
 
-                doUntil(XMLEvent.START_ELEMENT, "fuelConsumption");
-                vehicle.setFuelConsumption(Double.parseDouble(reader.getElementText()));
+                doUntil(XMLEvent.START_ELEMENT, "sale");
+                room.setSale(Double.parseDouble(reader.getElementText()));
 
-                doUntil(XMLEvent.START_ELEMENT, "power");
-                vehicle.setPower(Integer.parseInt(reader.getElementText()));
+                doUntil(XMLEvent.START_ELEMENT, "number");
+                room.setNumber(Integer.parseInt(reader.getElementText()));
 
-                doUntil(XMLEvent.START_ELEMENT, "year");
-                vehicle.setYear(Integer.parseInt(reader.getElementText()));
+                doUntil(XMLEvent.START_ELEMENT, "countOfRoom");
+                room.setCountOfRoom(Integer.parseInt(reader.getElementText()));
 
-                doUntil(XMLEvent.START_ELEMENT, "fuelType");
-                vehicle.setFuelType(FuelType.valueOf(reader.getElementText()));
 
-                vehicles.add(vehicle);
+                rooms.add(room);
             }
         }
 
-        return vehicles;
+        return rooms;
     }
 
     public StAX(InputStream is) throws XMLStreamException {

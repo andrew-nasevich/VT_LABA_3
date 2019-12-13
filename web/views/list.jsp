@@ -7,34 +7,32 @@
 <body>
     Добро пожаловать)
 
-    <c:if test="${vehicles != null && !vehicles.isEmpty()}">
+    <c:if test="${rooms != null && !rooms.isEmpty()}">
         <table border="1">
 
             <caption> Таблица </caption>
             <tr>
-                <th>Make</th>
-                <th>Model</th>
+                <th>Name</th>
+                <th>Surname</th>
                 <th>Price</th>
-                <th>FuelConsumption</th>
-                <th>Power</th>
-                <th>Year</th>
-                <th>FuelType</th>
+                <th>Sale</th>
+                <th>Number</th>
+                <th>Count Of Rooms</th>
             </tr>
 
-            <c:forEach var="vehicle" items="${vehicles}">
+            <c:forEach var="room" items="${rooms}">
                 <tr>
-                    <td>${vehicle.getMake()}</td>
-                    <td>${vehicle.getModel()}</td>
-                    <td>${vehicle.getPrice()}</td>
-                    <td>${vehicle.getFuelConsumption()}</td>
-                    <td>${vehicle.getPower()}</td>
-                    <td>${vehicle.getYear()}</td>
-                    <td>${vehicle.getFuelType()}</td>
+                    <td>${room.getName()}</td>
+                    <td>${room.getSurname()}</td>
+                    <td>${room.getPrice()}</td>
+                    <td>${room.getSale()}</td>
+                    <td>${room.getNumber()}</td>
+                    <td>${room.getCountOfRoom()}</td>
                 </tr>
             </c:forEach>
         </table>
     </c:if>
-    <c:if test="${vehicles == null || vehicles.isEmpty()}">
+    <c:if test="${rooms == null || rooms.isEmpty()}">
         <p>Empty list</p>
     </c:if>
     <c:if test="${pageIndex != 1}">

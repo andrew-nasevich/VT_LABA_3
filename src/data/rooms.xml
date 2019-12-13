@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rooms>
+ <room>
+  <name>Aliona</name>
+  <surname>Shmeyerova</surname>
+  <price>30000.0</price>
+  <sale>50.0</sale>
+  <number>150</number>
+  <countOfRoom>2</countOfRoom>
+ </room>
+ <room>
+  <name>Julia</name>
+  <surname>Kozlova</surname>
+  <price>30050.0</price>
+  <sale>100.0</sale>
+  <number>15</number>
+  <countOfRoom>1</countOfRoom>
+ </room>
+ <room>
+  <name>Merc</name>
+  <surname>c63 amg</surname>
+  <price>30000.0</price>
+  <sale>5.0</sale>
+  <number>150</number>
+  <countOfRoom>2013</countOfRoom>
+ </room>
+</rooms>

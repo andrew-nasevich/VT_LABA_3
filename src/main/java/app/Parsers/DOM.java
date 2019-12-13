@@ -1,7 +1,7 @@
 package app.Parsers;
 
-import app.AutoBase.FuelType;
-import app.AutoBase.Vehicle;
+import app.Hotel.Room;
+import app.Hotel.ViewType;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -17,15 +17,15 @@ import java.util.ArrayList;
 
 public class DOM {
 
-    private ArrayList<Vehicle> vehicles = new ArrayList<>();
+    private ArrayList<Room> rooms = new ArrayList<>();
 
-    public ArrayList<Vehicle> getResult(String XMLPath) throws ParserConfigurationException, IOException, SAXException {
+    public ArrayList<Room> getResult(String XMLPath) throws ParserConfigurationException, IOException, SAXException {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document document = builder.parse(new File(XMLPath));
 
-        NodeList vehicleElements = document.getDocumentElement().getElementsByTagName("vehicle");
+        NodeList vehicleElements = document.getDocumentElement().getElementsByTagName("room");
 
         for (int i = 0; i < vehicleElements.getLength(); i++) {
 
@@ -33,20 +33,18 @@ public class DOM {
 
             if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                 Element eElement = (Element) nNode;
-                Vehicle vehicle = new Vehicle();
+                Room room = new Room();
 
-                vehicle.setMake(eElement.getElementsByTagName("make").item(0).getTextContent());
-                vehicle.setModel(eElement.getElementsByTagName("model").item(0).getTextContent());
-                vehicle.setPrice(Double.parseDouble(eElement.getElementsByTagName("price").item(0).getTextContent()));
-                vehicle.setFuelConsumption(Double.parseDouble(eElement.getElementsByTagName("fuelConsumption").item(0).getTextContent()));
-                vehicle.setPower(Integer.parseInt(eElement.getElementsByTagName("power").item(0).getTextContent()));
-                vehicle.setYear(Integer.parseInt(eElement.getElementsByTagName("year").item(0).getTextContent()));
-                vehicle.setFuelType(FuelType.valueOf(eElement.getElementsByTagName("fuelType").item(0).getTextContent()));
-
-                vehicles.add(vehicle);
+                room.setName(eElement.getElementsByTagName("name").item(0).getTextContent());
+                room.setSurname(eElement.getElementsByTagName("surname").item(0).getTextContent());
+                room.setPrice(Double.parseDouble(eElement.getElementsByTagName("price").item(0).getTextContent()));
+                room.setSale(Double.parseDouble(eElement.getElementsByTagName("sale").item(0).getTextContent()));
+                room.setNumber(Integer.parseInt(eElement.getElementsByTagName("number").item(0).getTextContent()));
+                room.setCountOfRoom(Integer.parseInt(eElement.getElementsByTagName("countOfRoom").item(0).getTextContent()));
+                rooms.add(room);
             }
         }
 
-        return vehicles;
+        return rooms;
     }
 }
