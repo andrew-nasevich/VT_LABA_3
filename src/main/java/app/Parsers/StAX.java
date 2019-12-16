@@ -1,6 +1,6 @@
 package app.Parsers;
 
-import app.Hotel.Room;
+import app.bean.Client;
 import app.Hotel.ViewType;
 
 import javax.xml.stream.XMLInputFactory;
@@ -15,40 +15,33 @@ public class StAX implements AutoCloseable {
 
     private final XMLStreamReader reader;
 
-    private ArrayList<Room> rooms = new ArrayList<>();
+    private ArrayList<Client> clients = new ArrayList<>();
 
-    public ArrayList<Room> getResult() throws XMLStreamException {
+    public ArrayList<Client> getResult() throws XMLStreamException {
 
         while (reader.hasNext()) {       // while not end of XML
             int event = reader.next();   // read next event
             if (event == XMLEvent.START_ELEMENT &&
-                    "room".equals(reader.getLocalName())) {
-                Room room = new Room();
+                    "client".equals(reader.getLocalName())) {
+                Client client = new Client();
+
+                doUntil(XMLEvent.START_ELEMENT, "id");
+                client.setId(Integer.parseInt(reader.getElementText()));
 
                 doUntil(XMLEvent.START_ELEMENT, "name");
-                room.setName(reader.getElementText());
+                client.setName(reader.getElementText());
 
-                doUntil(XMLEvent.START_ELEMENT, "surname");
-                room.setSurname(reader.getElementText());
+                doUntil(XMLEvent.START_ELEMENT, "birthday");
+                client.setBirthday(reader.getElementText());
 
-                doUntil(XMLEvent.START_ELEMENT, "price");
-                room.setPrice(Double.parseDouble(reader.getElementText()));
+                doUntil(XMLEvent.START_ELEMENT, "medicalHistory");
+                client.setMedicalHistory(reader.getElementText());
 
-                doUntil(XMLEvent.START_ELEMENT, "sale");
-                room.setSale(Double.parseDouble(reader.getElementText()));
-
-                doUntil(XMLEvent.START_ELEMENT, "number");
-                room.setNumber(Integer.parseInt(reader.getElementText()));
-
-                doUntil(XMLEvent.START_ELEMENT, "countOfRoom");
-                room.setCountOfRoom(Integer.parseInt(reader.getElementText()));
-
-
-                rooms.add(room);
+                clients.add(client);
             }
         }
 
-        return rooms;
+        return clients;
     }
 
     public StAX(InputStream is) throws XMLStreamException {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><clients>
+    <client>
+        <id>2</id>
+        <name>Andrew</name>
+        <birthday>"17.07.00"</birthday>
+        <medicalHistory>He is not ready to got to the army</medicalHistory>
+    </client>
+    <client>
+        <id>101</id>
+        <name>Vera</name>
+        <birthday>"12.12.99"</birthday>
+        <medicalHistory>She is ok</medicalHistory>
+    </client>
+</clients>

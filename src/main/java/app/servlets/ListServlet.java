@@ -1,6 +1,6 @@
 package app.servlets;
 
-import app.Hotel.Room;
+import app.bean.Client;
 import app.Parsers.DOM;
 import app.XMLVerifier.XMLVerifier;
 
@@ -23,8 +23,8 @@ public class ListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, IOException {
 
-        String carsXSD =  "D:\\УНИВЕР\\3 курс\\WT3\\java\\src\\data\\rooms.xsd";
-        String carsXML =  "D:\\УНИВЕР\\3 курс\\WT3\\java\\src\\data\\rooms.xml";
+        String carsXSD =  "D:\\УНИВЕР\\3 курс\\WT3\\java\\src\\data\\clients.xsd";
+        String carsXML =  "D:\\УНИВЕР\\3 курс\\WT3\\java\\src\\data\\clients.xml";
 
         XMLVerifier xmlVerifier = new XMLVerifier();
         if (!xmlVerifier.validate(new File(carsXML), new File(carsXSD))){
@@ -56,9 +56,9 @@ public class ListServlet extends HttpServlet {
 
         /************************  DOM parser   *****************/
         DOM dom = new DOM();
-        ArrayList<Room> rooms = null;
+        ArrayList<Client> clients = null;
         try {
-            rooms = dom.getResult(carsXML);
+            clients = dom.getResult(carsXML);
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (org.xml.sax.SAXException e) {
@@ -69,10 +69,10 @@ public class ListServlet extends HttpServlet {
 
 
         /************************  StAX parser   *****************/
-        /*ArrayList<Room> rooms = null;
+        /*ArrayList<Client> clients = null;
         try {
             StAX StAX = new StAX(Files.newInputStream(Paths.get(carsXML)));
-            rooms = StAX.getResult();
+            clients = StAX.getResult();
         } catch (XMLStreamException e) {
             e.printStackTrace();
         }*/
@@ -81,11 +81,11 @@ public class ListServlet extends HttpServlet {
 
         int index = Integer.parseInt(req.getParameter("pageIndex") == null ? "1" : req.getParameter("pageIndex"));
 
-        if (rooms != null){
-            req.setAttribute("rooms", rooms.subList((index - 1) * PAGE_SIZE, Math.min(index * PAGE_SIZE, rooms.size())));
+        if (clients != null){
+            req.setAttribute("clients", clients.subList((index - 1) * PAGE_SIZE, Math.min(index * PAGE_SIZE, clients.size())));
             req.setAttribute("pageSize", PAGE_SIZE);
-            int pageCount = rooms.size() / PAGE_SIZE;
-            int mod = (rooms.size() % PAGE_SIZE) == 0 ? 0 : 1;
+            int pageCount = clients.size() / PAGE_SIZE;
+            int mod = (clients.size() % PAGE_SIZE) == 0 ? 0 : 1;
             req.setAttribute("pageCount", pageCount + mod);
             req.setAttribute("pageIndex", index);
         }

@@ -41,8 +41,8 @@ public class Main {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 
 
-        String carsXSD =  new File("").getAbsolutePath()+"\\src\\data\\rooms.xsd";
-        String carsXML =  new File("").getAbsolutePath()+"\\src\\data\\rooms.xml";
+        String carsXSD =  new File("").getAbsolutePath()+"\\src\\data\\clients.xsd";
+        String carsXML =  new File("").getAbsolutePath()+"\\src\\data\\clients.xml";
         if (!validateXMLByXSD(new File(carsXML), new File(carsXSD))){
             System.out.println("Invalid format rooms.xml");
             System.exit(0);
